@@ -1,4 +1,4 @@
-package com.katta.login.config;
+package com.katta.notification.config;
 
 import java.util.List;
 
