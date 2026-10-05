@@ -8,4 +8,4 @@ RUN chmod +x mvnw
 
 RUN ./mvnw clean package -DskipTests
 
-CMD ["java", "-jar", "target/notification-0.0.1-SNAPSHOT.jar"]
+CMD ["sh", "-c", "export KAFKA_SSL_TRUSTSTORE_CERTIFICATES=\"$(cat /etc/secrets/ca.pem)\" && exec java -jar target/notification-0.0.1-SNAPSHOT.jar"]
