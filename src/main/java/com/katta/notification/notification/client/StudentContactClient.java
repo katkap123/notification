@@ -17,9 +17,9 @@ public class StudentContactClient {
     private final String internalApiKey;
 
     public StudentContactClient(
-            RestClient.Builder restClientBuilder,
-            @Value("${auth.api.url}") String authApiUrl,
-            @Value("${internal.api.key}") String internalApiKey) {
+        RestClient.Builder restClientBuilder,
+        @Value("${auth.api.url}") String authApiUrl,
+        @Value("${internal.api.key}") String internalApiKey) {
 
         this.restClient = restClientBuilder
                 .baseUrl(authApiUrl)
