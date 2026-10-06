@@ -17,16 +17,15 @@ public class StudentContactClient {
     private final String internalApiKey;
 
     public StudentContactClient(
-        RestClient.Builder restClientBuilder,
         @Value("${auth.api.url}") String authApiUrl,
         @Value("${internal.api.key}") String internalApiKey) {
 
-        this.restClient = restClientBuilder
-                .baseUrl(authApiUrl)
-                .build();
+    this.restClient = RestClient.builder()
+            .baseUrl(authApiUrl)
+            .build();
 
-        this.internalApiKey = internalApiKey;
-    }
+    this.internalApiKey = internalApiKey;
+}
 
     public List<StudentContactResponse> getContacts(UUID studentId) {
 
